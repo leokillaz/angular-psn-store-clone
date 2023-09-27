@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<div>
+    <div class="detalhe_jogo__container" *ngIf="jogo$ as jogo">
+        <div>
+            <span class="row">
+                <img loading="lazy" data-qa="gameBackgroundImage#heroImage#image"
+                    alt=""
+                    class="detalhe_jogo-fade-in__container detalhe_jogo-right-top-third__container detalhe_jogo-l-fit-cover__container" src="assets/battlefield_1_capa.jpg" alt="">
+            </span>
+        </div>
+        <div>
+            <div class="col-lg-5 ">
+                <app-jogo [id]="jogo.id">
+                </app-jogo>
+            </div>
+            <div class="detalhe_jogo__container">
+                <div class="detalhe_jogo_item__container">
+                    <div>{{jogo?.gameJogadores}} jogadores</div>
+                </div>
+                <div class="detalhe_jogo_item__container">
+                    <div>{{jogo?.gameDescription}}</div>
+                </div>
+                <div class="detalhe_jogo_item__container">
+                    <div>Qualidade {{jogo?.gameVideo}}</div>
+                </div>
+                <div class="detalhe_jogo_item__container">
+                    <div>{{jogo?.gameVersao}} necessário para jogo</div>
+                </div>
+                <div class="detalhe_jogo_item__container">
+                </div>
+            </div>
+        </div>
+        <div>
+            <i class="fas fa-heart" id="coracao" onclick="toggleCoracao()"></i>
+        </div>
+        <div>Classificação {{jogo?.gameClassificacao}} anos</div>
+        <div>
+        </div>
+    </div>
+</div>

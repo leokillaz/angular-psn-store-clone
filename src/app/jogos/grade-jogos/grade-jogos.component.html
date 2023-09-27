@@ -1,0 +1,7 @@
+<div class="grade_jogos__container">
+    <div *ngFor="let jogo of jogos">
+        <a [routerLink]="['/jogos', jogo.id]">
+            <app-jogo [id]="jogo.id"></app-jogo>
+        </a>
+    </div>
+</div>

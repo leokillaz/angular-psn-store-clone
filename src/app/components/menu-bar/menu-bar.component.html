@@ -1,18 +1,28 @@
 <div class="menu-bar__container">
-	<div class="menu-bar__logo">
-		<img
-			src="assets/ps-logo.png"
-			alt="playstation logo"
-			srcset=""
-			width="140px"
-			height="32px"
-		>
-	</div>
-	<div class="menu-bar__item">
-		<ul>
-			<li><a href="#">YOUTUBE</a></li>
-			<li><a href="#">LINKEDIN</a></li>
-			<li><a href="#">GITHUB</a></li>
-		</ul>
-	</div>
+    <div class="menu-bar__logo">
+        <img 
+        src="assets/ps-logo.png" 
+        alt="Logo da playstation store"
+        srcset=""
+        width="140px"
+        height="32px"
+        >
+    </div>
+    <app-menu-bar-item></app-menu-bar-item>
+    <header class="menu-bar__iniciar">
+        <nav class="menu-bar__iniciar navbar navbar-light bg-white">
+            <div *ngIf="user$ | async as user">
+                <div *ngIf="user.name; else login">
+                    <i class="fa fa-user-circle mr-1"></i>
+                    <a class="mr-1">{{user.name}}</a>
+                    <a (click)="logout()">  Sair</a>
+                </div>
+            </div>
+        </nav>
+        <ng-template #login>
+            <span class="navbar-text">
+                <a [routerLink]="['']">Iniciar sessão</a>
+            </span>
+        </ng-template>
+    </header>
 </div>
